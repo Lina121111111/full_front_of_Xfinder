@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Marketing - Frontend разработчик</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .vacancy-page {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .vacancy-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .vacancy-title {
+            color: #6a0dad;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .vacancy-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+        }
+
+        .salary {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+
+        .vacancy-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #6a0dad;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #f0e6ff;
+            padding-bottom: 5px;
+        }
+
+        .section-content {
+            line-height: 1.6;
+        }
+
+        .requirements-list, .responsibilities-list {
+            padding-left: 20px;
+        }
+
+        .requirements-list li, .responsibilities-list li {
+            margin-bottom: 8px;
+        }
+
+        .contacts {
+            background-color: #f9f0ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .contacts-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #6a0dad;
+            font-size: 18px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #6a0dad;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #5a0b9d;
+        }
+
+        .apply-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #6a0dad;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .apply-button:hover {
+            background-color: #5a0b9d;
+        }
+    </style>
+</head>
+<body>
+    <a href="main.html" class="back-button">← Назад к списку вакансий</a>
+
+    <div class="vacancy-page">
+        <div class="vacancy-header">
+            <h1 class="vacancy-title">Frontend разработчик (React)</h1>
+            <div class="vacancy-meta">
+                <span class="meta-item">TechSolutions Inc.</span>
+                <span class="meta-item">Москва</span>
+                <span class="meta-item">Иванов Петр Сергеевич</span>
+            </div>
+            <div class="salary">120 000 - 150 000 руб.</div>
+        </div>
+
+        <div class="vacancy-section">
+            <h2 class="section-title">О компании</h2>
+            <div class="section-content">
+                <p>TechSolutions Inc. - ведущая IT-компания, специализирующаяся на разработке инновационных веб-приложений для крупного бизнеса. Наш портфель включает проекты для банковского сектора, ритейла и телекоммуникаций.</p>
+            </div>
+        </div>
+
+        <div class="vacancy-section">
+            <h2 class="section-title">Обязанности</h2>
+            <div class="section-content">
+                <ul class="responsibilities-list">
+                    <li>Разработка пользовательских интерфейсов на React</li>
+                    <li>Оптимизация производительности веб-приложений</li>
+                    <li>Взаимодействие с backend-разработчиками</li>
+                    <li>Участие в код-ревью</li>
+                    <li>Написание unit-тестов</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="vacancy-section">
+            <h2 class="section-title">Требования</h2>
+            <div class="section-content">
+                <ul class="requirements-list">
+                    <li>Опыт работы frontend-разработчиком от 3 лет</li>
+                    <li>Глубокое знание JavaScript (ES6+)</li>
+                    <li>Опыт работы с React, Redux</li>
+                    <li>Знание TypeScript будет преимуществом</li>
+                    <li>Опыт работы с REST API</li>
+                    <li>Знание принципов UI/UX</li>
+                    <li>Английский язык уровня B2 и выше</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="vacancy-section">
+            <h2 class="section-title">Условия</h2>
+            <div class="section-content">
+                <ul>
+                    <li>Официальное трудоустройство</li>
+                    <li>Гибкий график работы (возможность удалённой работы 2 дня в неделю)</li>
+                    <li>Медицинская страховка</li>
+                    <li>Корпоративное обучение и конференции</li>
+                    <li>Современный офис в центре Москвы</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contacts">
+            <div class="contacts-title">Контакты для отклика</div>
+            <p><strong>Email:</strong> hr@techsolutions.ru</p>
+            <p><strong>Телефон:</strong> +7 (495) 123-45-67</p>
+            <p><strong>Контактное лицо:</strong> Иванов Петр Сергеевич (HR-менеджер)</p>
+        </div>
+
+        <a href="#apply" class="apply-button">Откликнуться на вакансию</a>
+    </div>
+</body>
+</html>

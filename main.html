@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XFinder - Поиск вакансий</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #6a0dad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo {
+            font-family: 'Arial', sans-serif;
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Остальные стили остаются без изменений */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .search-input {
+            padding: 10px 15px;
+            width: 60%;
+            border: 2px solid #ddd;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .vacancies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .vacancy-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .vacancy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(106, 13, 173, 0.2);
+        }
+
+        .position-name {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            color: #6a0dad;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .employer-name {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            display: inline-block;
+            background-color: #eee;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .salary {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .requirements {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .contacts {
+            background-color: #f9f0ff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #6a0dad;
+            border-left: 3px solid #6a0dad;
+        }
+
+        .contacts-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 8px 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-button:hover {
+            background-color: #6a0dad;
+            color: white;
+            border-color: #6a0dad;
+        }
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+        }
+
+        .logo-link:hover .logo {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+    <a href="Syte_main.html" class="logo-link">
+        <div class="logo">XFinder</div>
+    </a>
+    <p class="tagline">Найди свою идеальную работу</p>
+    </div>
+
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Должность, компания или ключевые слова">
+        <button class="search-button">Найти</button>
+    </div>
+
+    <div class="filter-container">
+        <button class="filter-button">Все вакансии</button>
+        <button class="filter-button">IT</button>
+        <button class="filter-button">Маркетинг</button>
+        <button class="filter-button">Финансы</button>
+        <button class="filter-button">Образование</button>
+        <button class="filter-button">Медицина</button>
+    </div>
+
+    <div class="vacancies-container">
+        <!-- Карточка вакансии 1 -->
+        <a href="vacancy1.html" class="vacancy-card">
+            <div class="position-name">Frontend разработчик (React)</div>
+            <div class="company-name">TechSolutions Inc.</div>
+            <div class="employer-name">Иванов Петр Сергеевич</div>
+            <span class="location">Москва</span>
+            <div class="salary">120 000 - 150 000 руб.</div>
+            <div class="requirements">
+                <strong>Требования:</strong><br>
+                - Опыт работы от 3 лет<br>
+                - Знание JavaScript, React, Node.js<br>
+                - Умение работать в команде<br>
+                - Английский язык уровня B2 и выше
+            </div>
+            <div class="contacts">
+                <div class="contacts-title">Контакты:</div>
+                hr@techsolutions.ru<br>
+                +7 (495) 123-45-67
+            </div>
+        </a>
+
+        <!-- Карточка вакансии 2 -->
+        <a href="vacancy2.html" class="vacancy-card">
+            <div class="position-name">Digital-маркетолог</div>
+            <div class="company-name">Purple Marketing</div>
+            <div class="employer-name">Смирнова Анна Владимировна</div>
+            <span class="location">Санкт-Петербург</span>
+            <div class="salary">90 000 - 110 000 руб.</div>
+            <div class="requirements">
+                <strong>Требования:</strong><br>
+                - Опыт в digital-маркетинге от 2 лет<br>
+                - Навыки работы с Google Analytics, Яндекс.Метрикой<br>
+                - Знание основ SEO и контекстной рекламы<br>
+                - Креативность и аналитическое мышление
+            </div>
+            <div class="contacts">
+                <div class="contacts-title">Контакты:</div>
+                anna.smirnova@purplemarketing.com<br>
+                +7 (812) 765-43-21
+            </div>
+        </a>
+
+        <!-- Карточка вакансии 3 -->
+        <a href="vacancy3.html" class="vacancy-card">
+            <div class="position-name">Финансовый аналитик</div>
+            <div class="company-name">ФинансГрупп</div>
+            <div class="employer-name">Козлов Дмитрий Игоревич</div>
+            <span class="location">Новосибирск</span>
+            <div class="salary">140 000 - 180 000 руб.</div>
+            <div class="requirements">
+                <strong>Требования:</strong><br>
+                - Высшее экономическое образование<br>
+                - Опыт работы финансовым аналитиком от 4 лет<br>
+                - Знание МСФО, Excel на продвинутом уровне<br>
+                - Сертификаты CFA/ACCA будут преимуществом
+            </div>
+            <div class="contacts">
+                <div class="contacts-title">Контакты:</div>
+                hr@finansgroup.ru<br>
+                +7 (383) 987-65-43
+            </div>
+        </a>
+
+        <!-- Карточка вакансии 4 -->
+        <a href="vacancy4.html" class="vacancy-card">
+            <div class="position-name">Преподаватель IT-дисциплин</div>
+            <div class="company-name">Университет Современных Технологий</div>
+            <div class="employer-name">Петрова Ольга Николаевна</div>
+            <span class="location">Казань</span>
+            <div class="salary">75 000 - 85 000 руб.</div>
+            <div class="requirements">
+                <strong>Требования:</strong><br>
+                - Ученая степень (кандидат/доктор наук)<br>
+                - Опыт преподавания в вузе от 5 лет<br>
+                - Публикации в рецензируемых журналах<br>
+                - Готовность к научной работе
+            </div>
+            <div class="contacts">
+                <div class="contacts-title">Контакты:</div>
+                o.petrova@ust.edu<br>
+                +7 (843) 456-78-90
+            </div>
+        </a>
+    </div>
+</body>
+</html>
