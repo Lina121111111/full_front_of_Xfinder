@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Finder - Поиск вакансий</title>
+    <link rel="stylesheet" href="style_main.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <header>
+        <div id="loader" class="loader hidden"></div>
+        <div class="container">
+            <h1>
+                <a href="Syte_main.html">
+                    X-Finder
+                </a>
+            </h1>
+
+            
+            <div class="auth-container"></div>
+                <div class="auth-buttons" id="authButtons">
+                    <button onclick="location.href='login.html'">Войти</button>
+                    <button onclick="location.href='register.html'">Зарегистрироваться</button>
+                </div>
+            
+                <div class="profile-menu hidden" id="profileMenu">
+                    <span id="userName"></span>
+                    <button onclick="location.href='profile.html'">Профиль</button>
+                    <button onclick="logout()">Выйти</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h2>Поиск вакансий</h2>
+            <form class="search-form" id="searchForm">
+                <input type="text" id="jobTitle" placeholder="Должность">
+                <input type="text" id="city" placeholder="Город">
+                <input type="number" id="salary" placeholder="Минимальная зарплата">
+                <label>
+                    <input type="checkbox" id="remoteOnly"> Удалёнка
+                </label>
+                <button type="submit">Найти</button>
+            </form>
+            
+        </section>
+
+        <section class="popular-vacancies">
+            <h2>Популярные вакансии</h2>
+            <ul>
+                <li>Вакансия 1</li>
+                <li>Вакансия 2</li>
+                <li>Вакансия 3</li>
+                <li>Вакансия 4</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 X-Finder. Все права защищены.</p>
+    </footer>
+<div id="toast" class="toast hidden"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Finder - Регистрация</title>
+    <link rel="stylesheet" href="style_main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <a href="Syte_main.html">
+                X-Finder
+                </a>
+            </h1>
+            <div class="auth-buttons">
+                <button onclick="location.href='login.html'">Войти</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Регистрация</h2>
+        <form class="search-form">
+            <input id="lastName" type="text" placeholder="Фамилия" required>
+            <small class="error" id="lastNameError"></small>
+
+            <input id="firstName" type="text" placeholder="Имя" required>
+            <small class="error" id="firstNameError"></small>
+
+            <input id="patronymic" type="text" placeholder="Отчество">
+            <small class="error" id="patronymicError"></small>
+
+            <input id="city" type="text" placeholder="Город" required>
+            <small class="error" id="cityError"></small>
+
+            <select id="roleSelect" required>
+                <option value="" disabled selected>Выберите роль</option>
+                <option value="candidate">Соискатель</option>
+                <option value="employer">Работодатель</option>
+            </select>
+            <small class="error" id="roleSelectError"></small>
+
+            <input id="email" type="email" placeholder="Почта" required>
+            <small class="error" id="emailError"></small>
+
+            <input id="password" type="password" placeholder="Пароль" required>
+            <small class="error" id="passwordError"></small>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <script src="auth.js"></script>        
+</body>
+</html>

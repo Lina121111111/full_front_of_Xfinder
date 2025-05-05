@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X-Finder - Профиль</title>
+  <link rel="stylesheet" href="style_main.css">
+  <script defer src="main.js"></script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <h1><a href="Syte_main.html">X-Finder</a></h1>
+    <div class="auth-buttons">
+      <button onclick="logout()">Выйти</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h2>Мой профиль</h2>
+  <div id="userInfo">
+      <img id="avatarPreview" class="avatar" src="" alt="Аватар" style="display: none;">
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Полное имя:</strong> <span id="fullName"></span></p>
+      <p><strong>Город:</strong> <span id="cityDisplay"></span></p>
+      <p><strong>Должность:</strong> <span id="positionDisplay"></span></p>
+      <p><strong>Резюме:</strong> <a id="resumeLink" href="#" target="_blank" style="display: none;">Скачать</a></p>
+  </div>
+
+  <h3>Изменить город и должность</h3>
+  <form id="updateProfileForm">
+    <label for="cityInput">Город:</label>
+    <input type="text" id="cityInput" name="city" />
+  
+    <label for="positionInput">Должность:</label>
+    <input type="text" id="positionInput" name="position" />
+  
+    <button type="submit">Сохранить</button>
+  </form>
+  
+
+  <h3>Обновить аватар</h3>
+  <form id="avatarForm">
+      <input type="file" id="avatarInput" accept="image/png, image/jpeg" required>
+      <button type="submit">Загрузить аватар</button>
+  </form>
+
+  <h3>Загрузить резюме (PDF)</h3>
+  <form id="resumeForm">
+      <input type="file" id="resumeInput" accept="application/pdf" required>
+      <button type="submit">Загрузить резюме</button>
+  </form>
+
+  <h2>Мои отклики</h2>
+  <ul id="myApplications"></ul>
+</main>
+
+
+<footer>
+  <p>&copy; 2025 X-Finder. Все права защищены.</p>
+</footer>
+<div id="toast" class="toast hidden"></div>
+</body>
+</html>

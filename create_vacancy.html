@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать вакансию</title>
+    <link rel="stylesheet" href="style_main.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1><a href="Syte_main.html">X-Finder</a></h1>
+    </div>
+</header>
+
+<main>
+    <h2>Создать вакансию</h2>
+    <form id="vacancyForm" class="search-form">
+        <input type="text" id="title" placeholder="Название вакансии" required>
+        <input type="text" id="city" placeholder="Город" required>
+        <input type="number" id="salary" placeholder="Зарплата" required>
+        <label>
+            <input type="checkbox" id="remote"> Удалёнка
+        </label>
+        <textarea id="description" placeholder="Описание вакансии" required></textarea>
+        <button type="submit">Создать</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2025 X-Finder. Все права защищены.</p>
+</footer>
+
+<script src="main.js"></script>
+<script>
+    document.getElementById('vacancyForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const token = localStorage.getItem('token');
+        if (!token) {
+            showToast('Войдите в аккаунт!', 'error');
+            return;
+        }
+
+        const title = document.getElementById('title').value;
+        const city = document.getElementById('city').value;
+        const salary = document.getElementById('salary').value;
+        const remote = document.getElementById('remote').checked;
+        const description = document.getElementById('description').value;
+
+        showLoader();
+        try {
+            const response = await fetch(`${API_URL}/vacancies/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                },
+                body: JSON.stringify({ title, city, salary, remote, description }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Ошибка создания вакансии');
+            }
+
+            showToast('Вакансия успешно создана!', 'success');
+            window.location.href = 'Syte_main.html';
+        } catch (error) {
+            console.error(error);
+            showToast('Ошибка при создании вакансии', 'error');
+        } finally {
+            hideLoader();
+        }
+    });
+</script>
+</body>
+</html>
